@@ -10,7 +10,7 @@ ACTIONS="init,open,test,release,apply,list"
 HISTORY_FILE="$LOCALPATCHDIR/.patch_history.$$"
 TMP_FILE="$LOCALPATCHDIR/.tmp.$$"
 DB_HOST=""
-VDCVERSION=
+VERSION=
 
 function war 
 {
@@ -39,7 +39,7 @@ function svn_commit
 
 function set_svn_path
 {
-	read -p "Please select the VDC VERSION(5|6): " x
+	read -p "Please select the VERSION(5|6): " x
 	if (( $x == 5 )); then 
         SVNPATCHDIR="$SVNAUTOBUILDDIR/005/$TODAYDATE"
 	elif (( $x == 6 )); then
