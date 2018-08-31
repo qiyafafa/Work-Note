@@ -109,7 +109,7 @@ function run_sql_file
 # Check input parameters
 echo "$HISTORY_FILE"
 if (( $# < 1 )); then 
-	abort "Usage : $0 \[init|open|test|release|apply|list] [patchname] [5|6(vdc version)] "
+	abort "Usage : $0 \[init|open|test|release|apply|list] [patchname] [5|6(version)] "
 
 fi 
 
@@ -129,20 +129,6 @@ fi
 # Check 
 if [[ ! -d $LOCALPATCHDIR && $ACTION == "init" ]]; then 
 dirs="common
-master_cmd
-master_db/000_schema
-master_db/001_types
-master_db/002_tables
-master_db/003_functions
-master_db/005_plproxy
-master_db/006_data
-probe_db/000_schema
-probe_db/001_types
-probe_db/002_tables
-probe_db/003_functions
-probe_db/005_plproxy
-probe_db/006_data
-probe_cmd
 debug
 test
 "
