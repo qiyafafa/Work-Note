@@ -1,0 +1,7 @@
+#!/bin/bash
+mem_use1=`top -u postgres -n 1 |grep "postgres" |awk '{print $7}'|grep -v 'g'|awk '{s+=$1} END {print s}'|awk '{print $1/1024/1024}'`
+mem_use2=`top -u postgres -n 1 |grep "postgres" |awk '{print $7}'|grep 'g'|sed -n 's/g/\ /p'|awk '{s+=$1} END {print s}'`
+mem_use=`python3 -c "print($mem_use1 + $mem_use2)"`
+
+echo "User postgres consume $mem_use G"
+exit 0
