@@ -1,0 +1,46 @@
+{"$and": [
+	{"event": {"$in": ["account insert", "account update", "account delete"]}}	,
+	{"time": {"$gt": ${lastUpdateTime} } }
+	]
+}
+	
+{"$or": [
+	{"createTime": {"$gt": ${lastUpdateTime} }}	,
+	{"updateTime": {"$gt": ${lastUpdateTime} } }
+	]
+}
+	
+{"$or": [
+	{"createTime": {"$gt": ${bulletLastUpdateTime} }}	,
+	{"endTime": {"$gt": ${bulletLastUpdateTime} } }
+	]
+}
+
+{"$or": [
+	{"createTime": {"$gt": ${lastUpdateTime} }}	,
+	{"updateTime": {"$gt": ${lastUpdateTime} } }
+	]
+}
+
+18826134658
+
+{"$or": [
+	{"createTime": {"$gt": ${acountLastUpdateTime} }}	,
+	{"updateTime": {"$gt": ${acountLastUpdateTime} } }
+	]
+}
+
+1544766730521.0
+
+获取最后删除事件
+{"$and": [
+	{"event": {"$in": ["fish_hunter_player delete", "fish_hunter_bullets_history delete", "account delete"]}}	,
+	{"time": {"$gt": ${lastDeleteTime} } }
+	]
+}
+
+${mysql_host}
+${mysql_port}
+${mysql_user}
+${mysql_password}
+
