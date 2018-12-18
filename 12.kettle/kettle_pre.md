@@ -1,5 +1,5 @@
 ## Download url
-
+https://community.hitachivantara.com/docs/DOC-1009855
 https://community.hitachivantara.com/docs/DOC-1009855-data-integration-kettle
 https://github.com/pentaho/pentaho-kettle
 
@@ -19,4 +19,9 @@ setx CLASSPATH .;%JAVA_HOME%\lib
 
 
 
+### Book URL
+https://www.wiley.com/en-us/Pentaho+Kettle+Solutions%3A+Building+Open+Source+ETL+Solutions+with+Pentaho+Data+Integration-p-9780470635179
+
+### How to run python script in kettlt
+http://markahall.blogspot.com/2016/01/cpython-scripting-in-pentaho-data.html
 
