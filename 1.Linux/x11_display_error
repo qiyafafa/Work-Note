@@ -1,0 +1,5 @@
+## Error , can not display 
+
+```sh
+yum -y install xauth
+```
