@@ -1,6 +1,5 @@
 Get the following error when install numba, solution: install the llvmlite=0.30.0 before install numba=0.47.0
 
-```log
 Requirement already satisfied: setuptools in ./python_build/lib/python3.5/site-packages (from numba==0.47.0) (28.8.0)
 Collecting llvmlite>=0.31.0dev0
   Using cached llvmlite-0.32.1.tar.gz (104 kB)
@@ -43,4 +42,3 @@ Installing collected packages: llvmlite, numba
     RuntimeError: llvm-config failed executing, please point LLVM_CONFIG to the path for llvm-config
     error: command '/var/jenkins_home/workspace/auto_build_python_lib/python_build/bin/python3' failed with exit status 1
     
-```
