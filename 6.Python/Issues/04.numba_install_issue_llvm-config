@@ -1,0 +1,46 @@
+Get the following error when install numba, solution: install the llvmlite=0.30.0 before install numba=0.47.0
+
+```log
+Requirement already satisfied: setuptools in ./python_build/lib/python3.5/site-packages (from numba==0.47.0) (28.8.0)
+Collecting llvmlite>=0.31.0dev0
+  Using cached llvmlite-0.32.1.tar.gz (104 kB)
+Requirement already satisfied: numpy in ./python_build/lib/python3.5/site-packages (from numba==0.47.0) (1.18.5)
+Using legacy 'setup.py install' for llvmlite, since package 'wheel' is not installed.
+Installing collected packages: llvmlite, numba
+    Running setup.py install for llvmlite: started
+    Running setup.py install for llvmlite: finished with status 'error'
+    ERROR: Command errored out with exit status 1:
+     command: /var/jenkins_home/workspace/auto_build_python_lib/python_build/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-ec2dz10h/llvmlite/setup.py'"'"'; __file__='"'"'/tmp/pip-install-ec2dz10h/llvmlite/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-srigojm9/install-record.txt --single-version-externally-managed --compile --install-headers /var/jenkins_home/workspace/auto_build_python_lib/python_build/include/site/python3.5/llvmlite
+         cwd: /tmp/pip-install-ec2dz10h/llvmlite/
+    Complete output (29 lines):
+    running install
+    running build
+    got version from file /tmp/pip-install-ec2dz10h/llvmlite/llvmlite/_version.py {'version': '0.32.1', 'full': 'aa11b129c0b55973067422397821ae6d44fa5e70'}
+    running build_ext
+    /var/jenkins_home/workspace/auto_build_python_lib/python_build/bin/python3 /tmp/pip-install-ec2dz10h/llvmlite/ffi/build.py
+    LLVM version... Traceback (most recent call last):
+      File "/tmp/pip-install-ec2dz10h/llvmlite/ffi/build.py", line 106, in main_posix
+        out = subprocess.check_output([llvm_config, '--version'])
+      File "/usr/local/lib/python3.5/subprocess.py", line 316, in check_output
+        **kwargs).stdout
+      File "/usr/local/lib/python3.5/subprocess.py", line 383, in run
+        with Popen(*popenargs, **kwargs) as process:
+      File "/usr/local/lib/python3.5/subprocess.py", line 676, in __init__
+        restore_signals, start_new_session)
+      File "/usr/local/lib/python3.5/subprocess.py", line 1289, in _execute_child
+        raise child_exception_type(errno_num, err_msg)
+    FileNotFoundError: [Errno 2] No such file or directory: 'llvm-config'
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/tmp/pip-install-ec2dz10h/llvmlite/ffi/build.py", line 192, in <module>
+        main()
+      File "/tmp/pip-install-ec2dz10h/llvmlite/ffi/build.py", line 182, in main
+        main_posix('linux', '.so')
+      File "/tmp/pip-install-ec2dz10h/llvmlite/ffi/build.py", line 109, in main_posix
+        "to the path for llvm-config" % (llvm_config,))
+    RuntimeError: llvm-config failed executing, please point LLVM_CONFIG to the path for llvm-config
+    error: command '/var/jenkins_home/workspace/auto_build_python_lib/python_build/bin/python3' failed with exit status 1
+    
+```
